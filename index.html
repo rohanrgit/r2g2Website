@@ -70,11 +70,11 @@
             <!-- These links can be customized -->
             <div class="flex items-center space-x-4">
                 <a href="about.html" class="hover:underline">About</a>
-                <a href="index.html" class="hover:underline">Blog</a>
+                <a href="blog.html" class="hover:underline">Blog</a>
             </div>
             <div class="flex items-center space-x-4">
                 <a href="contact.html" class="hover:underline">Contact</a>
-                <a href="newsletter.html" class="hover:underline">Newsletter</a>
+                <a href="library.html" class="hover:underline">Library</a>
                 <!-- Waffle Launcher -->
                 <div class="relative" id="waffle-container">
                     <button id="waffle-button" title="Google apps" class="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -82,29 +82,21 @@
                     </button>
                     <div id="waffle-menu" class="hidden absolute top-full right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-10">
                         <div class="grid grid-cols-3 gap-2 text-center text-sm">
-                             <a href="#" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100">
-                                <img src="https://placehold.co/40x40/4285F4/FFFFFF?text=G" class="w-10 h-10 rounded-full mb-1" alt="Search">
-                                <span>Search</span>
+                             <a href="about.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100">
+                                <img src="https://placehold.co/40x40/4285F4/FFFFFF?text=A" class="w-10 h-10 rounded-full mb-1" alt="About">
+                                <span>About</span>
                             </a>
-                            <a href="#" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100">
-                                <img src="https://placehold.co/40x40/34A853/FFFFFF?text=M" class="w-10 h-10 rounded-full mb-1" alt="Maps">
-                                <span>Maps</span>
+                            <a href="blog.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100">
+                                <img src="https://placehold.co/40x40/34A853/FFFFFF?text=B" class="w-10 h-10 rounded-full mb-1" alt="Blog">
+                                <span>Blog</span>
                             </a>
-                            <a href="#" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100">
-                                <img src="https://placehold.co/40x40/EA4335/FFFFFF?text=YT" class="w-10 h-10 rounded-full mb-1" alt="YouTube">
-                                <span>YouTube</span>
+                            <a href="contact.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100">
+                                <img src="https://placehold.co/40x40/EA4335/FFFFFF?text=C" class="w-10 h-10 rounded-full mb-1" alt="Contact">
+                                <span>Contact</span>
                             </a>
-                            <a href="#" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100">
-                                <img src="https://placehold.co/40x40/FBBC05/FFFFFF?text=P" class="w-10 h-10 rounded-full mb-1" alt="Photos">
-                                <span>Photos</span>
-                            </a>
-                             <a href="#" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100">
-                                <img src="https://placehold.co/40x40/4285F4/FFFFFF?text=D" class="w-10 h-10 rounded-full mb-1" alt="Drive">
-                                <span>Drive</span>
-                            </a>
-                             <a href="#" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100">
-                                <img src="https://placehold.co/40x40/34A853/FFFFFF?text=C" class="w-10 h-10 rounded-full mb-1" alt="Calendar">
-                                <span>Calendar</span>
+                            <a href="library.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100">
+                                <img src="https://placehold.co/40x40/FBBC05/FFFFFF?text=L" class="w-10 h-10 rounded-full mb-1" alt="Library">
+                                <span>Library</span>
                             </a>
                         </div>
                     </div>
@@ -128,11 +120,11 @@
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                 </div>
-                <input id="search-input" type="text" class="block w-full bg-white border border-gray-300 rounded-full py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm hover:shadow-md" placeholder="Search blog posts or topics...">
+                <input id="search-input" type="text" class="block w-full bg-white border border-gray-300 rounded-full py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm hover:shadow-md" placeholder="Search Rohan's blog...">
             </div>
             <div class="flex items-center justify-center mt-6 space-x-4">
-                <button type="submit" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md">Blog Search</button>
-                <button type="button" id="lucky-button" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md">I'm Feeling Lucky</button>
+                <button type="submit" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md" title="Search Blog">Search</button>
+                <button type="button" id="lucky-button" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md" title="This takes you to a random article from Rohan's Blog">I'm Feeling Lucky</button>
             </div>
         </form>
     </div>
