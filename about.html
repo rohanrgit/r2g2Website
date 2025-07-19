@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <title>About Rohan Rai Gupta - Rohan Rai Gupta's Blog</title>
     <meta name="description" content="Learn more about Rohan Rai Gupta, an entrepreneur, investor, and thought leader in the tech industry.">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,10 +47,10 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Left Column Top -->
-            <div class="lg:col-span-2">
-                <!-- Image Gallery & Blog Post Card -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 image-gallery-container">
+            <!-- Left Column -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Top Section: Image Gallery & Blog Post -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 image-gallery-container">
                     <div class="md:col-span-2 grid grid-cols-3 grid-rows-2 gap-2 h-full">
                         <div class="col-span-2 row-span-2">
                             <img src="assets/about1.jpg" alt="Rohan Rai Gupta - Main" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/800x800/cccccc/ffffff?text=Rohan';">
@@ -72,119 +72,124 @@
                         <p class="text-xs text-gray-500 dark:text-gray-500 mt-auto pt-4">18 Jul 2025</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Right Column Top -->
-            <div class="lg:col-span-1">
-                 <!-- Top Cards -->
-                <div class="flex gap-4 mb-6">
-                    <div class="w-1/2 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 text-center">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Age</p>
-                        <p class="text-2xl font-bold">35</p>
-                        <p class="text-xs text-gray-400 mt-1">1 Jan 1990</p>
+                <!-- Bottom Section: Wikipedia & People Also Ask -->
+                <div>
+                    <!-- Wikipedia Snippet -->
+                    <div class="mb-8">
+                        <div class="flex items-center mb-2">
+                            <img src="https://placehold.co/24x24/808080/ffffff?text=W" alt="Wikipedia Logo" class="w-6 h-6 mr-2 rounded-full">
+                            <div>
+                                <p class="font-semibold">Wikipedia</p>
+                                <a href="#" class="text-sm text-gray-500 dark:text-gray-400">https://en.wikipedia.org/wiki/Rohan_Rai_Gupta</a>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            <span class="font-bold">Rohan Rai Gupta</span> is an entrepreneur, investor, and computer scientist best known for co-founding several technology startups and for his thought leadership in the fields of artificial intelligence and decentralized finance... <a href="#" class="text-blue-600 dark:text-blue-400">Wikipedia</a>
+                        </p>
                     </div>
-                    <div class="w-1/2 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 text-center">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Net worth</p>
-                        <p class="text-2xl font-bold">Placeholder</p>
-                        <p class="text-xs text-gray-400 mt-1">Forbes</p>
-                    </div>
-                </div>
 
-                <!-- LinkedIn Post Card -->
-                <div class="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-6">
-                    <div class="flex items-center mb-2">
-                        <svg class="w-5 h-5 mr-2 text-blue-700 dark:text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-                        </svg>
-                        <p class="font-semibold">LinkedIn</p>
-                    </div>
-                    <a href="https://www.linkedin.com/posts/example_post_activity-12345" target="_blank" rel="noopener noreferrer" class="text-sm hover:underline">
-                        <span class="font-bold">Rohan Rai Gupta (@rohanraigupta)</span> • Founder of several startups. I'm a computer scientist. I'm 35 years old!...
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Left Column Bottom -->
-            <div class="lg:col-span-2">
-                <!-- Wikipedia Snippet -->
-                <div class="mb-8">
-                    <div class="flex items-center mb-2">
-                        <img src="https://placehold.co/24x24/808080/ffffff?text=W" alt="Wikipedia Logo" class="w-6 h-6 mr-2 rounded-full">
-                        <div>
-                            <p class="font-semibold">Wikipedia</p>
-                            <a href="#" class="text-sm text-gray-500 dark:text-gray-400">https://en.wikipedia.org/wiki/Rohan_Rai_Gupta</a>
+                    <!-- People Also Ask -->
+                    <div class="border-t dark:border-gray-700 pt-6">
+                        <h2 class="text-2xl font-bold mb-4">People also ask</h2>
+                        <div class="space-y-4">
+                            <details class="group">
+                                <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                                    <span>What is Rohan Rai Gupta known for?</span>
+                                    <span class="transition group-open:rotate-180">
+                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                                    </span>
+                                </summary>
+                                <p class="text-gray-600 dark:text-gray-400 mt-3 group-open:animate-fadeIn">
+                                    Rohan is primarily known for his contributions to the tech startup ecosystem as both a founder and an investor.
+                                </p>
+                            </details>
+                            <details class="group">
+                                <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                                    <span>Where did Rohan Rai Gupta study?</span>
+                                    <span class="transition group-open:rotate-180">
+                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                                    </span>
+                                </summary>
+                                <p class="text-gray-600 dark:text-gray-400 mt-3 group-open:animate-fadeIn">
+                                    He pursued higher education in computer science at a top-tier university in the United States.
+                                </p>
+                            </details>
                         </div>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        <span class="font-bold">Rohan Rai Gupta</span> is an entrepreneur, investor, and computer scientist best known for co-founding several technology startups and for his thought leadership in the fields of artificial intelligence and decentralized finance... <a href="#" class="text-blue-600 dark:text-blue-400">Wikipedia</a>
-                    </p>
-                </div>
-
-                <!-- People Also Ask -->
-                <div class="border-t dark:border-gray-700 pt-6">
-                    <h2 class="text-2xl font-bold mb-4">People also ask</h2>
-                    <div class="space-y-4">
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                <span>What is Rohan Rai Gupta known for?</span>
-                                <span class="transition group-open:rotate-180">
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                                </span>
-                            </summary>
-                            <p class="text-gray-600 dark:text-gray-400 mt-3 group-open:animate-fadeIn">
-                                Rohan is primarily known for his contributions to the tech startup ecosystem as both a founder and an investor.
-                            </p>
-                        </details>
-                        <details class="group">
-                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                <span>Where did Rohan Rai Gupta study?</span>
-                                <span class="transition group-open:rotate-180">
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                                </span>
-                            </summary>
-                            <p class="text-gray-600 dark:text-gray-400 mt-3 group-open:animate-fadeIn">
-                                He pursued higher education in computer science at a top-tier university in the United States.
-                            </p>
-                        </details>
-                    </div>
                 </div>
             </div>
-            <!-- Right Column Bottom -->
-            <div class="lg:col-span-1">
-                <!-- About Panel -->
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">About</h3>
-                    <div class="space-y-3 text-sm">
-                        <p>His work focuses on leveraging technology to solve complex problems and create new opportunities for global communities.</p>
-                        <p><strong>Born:</strong> 1 January 1990 (age 35 years), New Delhi, India</p>
-                        <p><strong>Net worth:</strong> Placeholder Value (2025)</p>
-                        <p><strong>Education:</strong> Placeholder University (MS)</p>
-                        <p><strong>Spouse:</strong> Placeholder Name</p>
-                        <p><strong>Parents:</strong> Placeholder Parent 1, Placeholder Parent 2</p>
-                        <p><strong>Children:</strong> 2</p>
+
+            <!-- Right Column -->
+            <div class="lg:col-span-1 space-y-8">
+                 <!-- Top Section: Knowledge Panel -->
+                <div class="flex flex-col image-gallery-container">
+                    <!-- Top Cards -->
+                    <div class="flex gap-4 mb-6">
+                        <div class="w-1/2 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 text-center">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Age</p>
+                            <p class="text-2xl font-bold">35</p>
+                            <p class="text-xs text-gray-400 mt-1">1 Jan 1990</p>
+                        </div>
+                        <div class="w-1/2 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 text-center">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Net worth</p>
+                            <p class="text-2xl font-bold">Placeholder</p>
+                            <p class="text-xs text-gray-400 mt-1">Forbes</p>
+                        </div>
                     </div>
 
-                    <div class="mt-6 border-t dark:border-gray-700 pt-4">
-                        <h4 class="font-semibold mb-2">Profiles</h4>
-                        <div class="flex space-x-4">
-                             <a href="https://www.linkedin.com/in/rohanraigupta/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 flex items-center hover:underline">
-                                <svg class="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                    <!-- LinkedIn Post Card -->
+                    <div class="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg flex flex-col">
+                        <img src="https://placehold.co/400x200/cccccc/ffffff?text=Post+Image" alt="LinkedIn Post Image" class="rounded-t-lg object-cover w-full h-20">
+                        <div class="p-4">
+                            <div class="flex items-center mb-2">
+                                <svg class="w-5 h-5 mr-2 text-blue-700 dark:text-blue-500" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
                                 </svg>
-                                LinkedIn
+                                <p class="font-semibold">LinkedIn</p>
+                            </div>
+                            <a href="https://www.linkedin.com/posts/example_post_activity-12345" target="_blank" rel="noopener noreferrer" class="text-sm hover:underline">
+                                <span class="font-bold">Rohan Rai Gupta (@rohanraigupta)</span> • Founder of several startups. I'm a computer scientist. I'm 35 years old!...
                             </a>
-                            <a href="https://twitter.com/rohanraigupta" target="_blank" rel="noopener noreferrer" class="text-gray-800 dark:text-gray-200 flex items-center hover:underline">
-                                 <svg class="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                                </svg>
-                                Twitter/X
-                            </a>
-                            <a href="#" class="text-red-600 dark:text-red-400 flex items-center hover:underline">
-                                <svg class="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
-                                YouTube
-                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-grow"></div>
+                </div>
+                
+                <!-- Bottom Section: About Panel -->
+                <div>
+                    <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">About</h3>
+                        <div class="space-y-3 text-sm">
+                            <p>His work focuses on leveraging technology to solve complex problems and create new opportunities for global communities.</p>
+                            <p><strong>Born:</strong> 1 January 1990 (age 35 years), New Delhi, India</p>
+                            <p><strong>Net worth:</strong> Placeholder Value (2025)</p>
+                            <p><strong>Education:</strong> Placeholder University (MS)</p>
+                            <p><strong>Spouse:</strong> Placeholder Name</p>
+                            <p><strong>Parents:</strong> Placeholder Parent 1, Placeholder Parent 2</p>
+                            <p><strong>Children:</strong> 2</p>
+                        </div>
+
+                        <div class="mt-6 border-t dark:border-gray-700 pt-4">
+                            <h4 class="font-semibold mb-2">Profiles</h4>
+                            <div class="flex space-x-4">
+                                 <a href="https://www.linkedin.com/in/rohanraigupta/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 flex items-center hover:underline">
+                                    <svg class="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                    </svg>
+                                    LinkedIn
+                                </a>
+                                <a href="https://twitter.com/rohanraigupta" target="_blank" rel="noopener noreferrer" class="text-gray-800 dark:text-gray-200 flex items-center hover:underline">
+                                     <svg class="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                                    </svg>
+                                    Twitter/X
+                                </a>
+                                <a href="#" class="text-red-600 dark:text-red-400 flex items-center hover:underline">
+                                    <svg class="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+                                    YouTube
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
