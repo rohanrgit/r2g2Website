@@ -178,38 +178,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="w-full bg-gray-100 dark:bg-gray-900 text-sm text-gray-600 dark:text-gray-400 mt-auto">
-        <!-- Location Banner -->
-        <div class="px-8 py-3 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
-            <!-- Mobile -->
-            <div class="sm:hidden">
-                <p>New Delhi,</p>
-                <p>India</p>
-            </div>
-            <div class="sm:hidden text-right">
-                <p>© Rohan Rai Gupta.</p>
-                <p>All Rights Reserved.</p>
-            </div>
-            <!-- Desktop -->
-            <span class="hidden sm:inline">New Delhi, India</span>
-            <span class="hidden sm:inline text-right">© Rohan Rai Gupta. All Rights Reserved.</span>
-        </div>
-        <!-- Footer Links -->
-        <div class="w-full px-8 py-4">
-            <nav class="flex flex-col sm:flex-row justify-between items-center">
-                <div class="flex items-center space-x-6 mb-2 sm:mb-0">
-                    <a href="https://www.linkedin.com/in/rohanraigupta/" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
-                    <a href="https://twitter.com/rohanraigupta" target="_blank" rel="noopener noreferrer" class="hover:underline">Twitter/X</a>
-                    <a href="https://calendly.com/rohanraigupta/30m" target="_blank" rel="noopener noreferrer" class="hover:underline">Consult</a>
-                </div>
-                <div class="flex items-center space-x-6">
-                    <button id="dark-theme-toggle" class="hover:underline">Dark Theme: Off</button>
-                    <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
-                </div>
-            </nav>
-        </div>
-    </footer>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -300,8 +270,6 @@
             const closeModalButton = document.getElementById('close-modal-button');
             const waffleToggles = document.querySelectorAll('.waffle-toggle');
             const waffleMenu = document.getElementById('waffle-menu');
-            const darkThemeToggle = document.getElementById('dark-theme-toggle');
-            const htmlElement = document.documentElement;
             
             let currentPostId = null;
 
@@ -395,24 +363,6 @@
                 displayResults(filteredPosts);
             }
             
-            // --- THEME TOGGLE LOGIC ---
-            function updateThemeToggleText() {
-                const isDarkMode = htmlElement.classList.contains('dark');
-                if (darkThemeToggle) {
-                   darkThemeToggle.textContent = `Dark Theme: ${isDarkMode ? 'On' : 'Off'}`;
-                }
-            }
-
-            darkThemeToggle.addEventListener('click', () => {
-                htmlElement.classList.toggle('dark');
-                if (htmlElement.classList.contains('dark')) {
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                }
-                updateThemeToggleText();
-            });
-
             // --- WAFFLE MENU LOGIC ---
             waffleToggles.forEach(button => {
                 button.addEventListener('click', (e) => {
@@ -423,7 +373,7 @@
                     menu.style.top = `${buttonRect.bottom + window.scrollY}px`;
                     
                     if (window.innerWidth < 768) { // md breakpoint
-                         const menuWidth = menu.offsetWidth || 288; // Use 288 as a fallback
+                         const menuWidth = menu.offsetWidth || 288;
                          menu.style.left = `${buttonRect.left + (buttonRect.width / 2) - (menuWidth / 2)}px`;
                          menu.style.right = 'auto';
                     } else {
@@ -462,9 +412,8 @@
             closeModalButton.addEventListener('click', closeModal);
             postModal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
 
-            // --- INITIALIZE PAGE STATE ---
-            updateThemeToggleText(); // Set initial theme toggle text
         });
     </script>
+    <script src="main.js"></script>
 </body>
 </html>
