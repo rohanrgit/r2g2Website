@@ -52,13 +52,13 @@
                 <!-- Image Gallery -->
                 <div class="grid grid-cols-3 grid-rows-2 gap-2 mb-8 image-gallery-container">
                     <div class="col-span-2 row-span-2">
-                        <img src="" alt="Rohan Rai Gupta - Main" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/800x800/cccccc/ffffff?text=Rohan';">
+                        <img src="assets/about1.jpg" alt="Rohan Rai Gupta - Main" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/800x800/cccccc/ffffff?text=Rohan';">
                     </div>
                     <div class="col-span-1 row-span-1">
-                        <img src="" alt="Rohan Rai Gupta - Thumbnail 1" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/400x400/b3b3b3/ffffff?text=Rohan';">
+                        <img src="assets/about2.jpg" alt="Rohan Rai Gupta - Thumbnail 1" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/400x400/b3b3b3/ffffff?text=Rohan';">
                     </div>
                     <div class="col-span-1 row-span-1">
-                        <img src="" alt="Rohan Rai Gupta - Thumbnail 2" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/400x400/999999/ffffff?text=Rohan';">
+                        <img src="assets/about3.heic" alt="Rohan Rai Gupta - Thumbnail 2" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/400x400/999999/ffffff?text=Rohan';">
                     </div>
                 </div>
 
@@ -177,7 +177,7 @@
     <script src="main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Image Randomization Logic ---
+            // --- Image Gallery Logic ---
             const allImagePaths = [
                 'assets/about1.jpg', 'assets/about2.jpg', 'assets/about3.heic',
                 'assets/about4.jpg', 'assets/about5.jpg', 'assets/about6.jpg',
@@ -188,31 +188,8 @@
                 'assets/about19.jpg', 'assets/about20.jpg'
             ];
 
-            // To fix the "images not loading" issue, we'll use placeholders.
-            // When you are ready to use your own images, replace this array
-            // with the `allImagePaths` array above and ensure your file paths are correct.
-            const placeholderImagePaths = Array.from({ length: 20 }, (_, i) => `https://placehold.co/800x600/cccccc/ffffff?text=Image+${i + 1}`);
-
-
-            function shuffleArray(array) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [array[i], array[j]] = [array[j], array[i]];
-                }
-            }
-
-            shuffleArray(placeholderImagePaths); // Using placeholders for demonstration
-
             const galleryImgElements = document.querySelectorAll('.gallery-img');
-            const displayedImages = [];
-            galleryImgElements.forEach((img, index) => {
-                if (index < 3) {
-                    const src = placeholderImagePaths[index]; // Using placeholders
-                    img.src = src;
-                    displayedImages.push(src);
-                }
-            });
-
+            
             // --- Modal Logic ---
             const imageModal = document.getElementById('image-modal');
             const modalImg = document.getElementById('modal-img');
@@ -222,14 +199,21 @@
             let currentImageIndex = 0;
 
             const showImage = (index) => {
-                modalImg.src = displayedImages[index];
+                modalImg.src = allImagePaths[index];
                 currentImageIndex = index;
             };
 
-            galleryImgElements.forEach((img, index) => {
+            galleryImgElements.forEach((img) => {
                 img.addEventListener('click', () => {
-                    showImage(index);
-                    imageModal.classList.remove('hidden');
+                    // Find the index of the clicked image in the full list
+                    const clickedSrc = new URL(img.src).pathname;
+                    const folderSrc = clickedSrc.substring(clickedSrc.indexOf('assets/'));
+                    const index = allImagePaths.indexOf(folderSrc);
+                    
+                    if (index !== -1) {
+                        showImage(index);
+                        imageModal.classList.remove('hidden');
+                    }
                 });
             });
 
@@ -238,12 +222,12 @@
             };
 
             const showNextImage = () => {
-                const nextIndex = (currentImageIndex + 1) % displayedImages.length;
+                const nextIndex = (currentImageIndex + 1) % allImagePaths.length;
                 showImage(nextIndex);
             };
 
             const showPrevImage = () => {
-                const prevIndex = (currentImageIndex - 1 + displayedImages.length) % displayedImages.length;
+                const prevIndex = (currentImageIndex - 1 + allImagePaths.length) % allImagePaths.length;
                 showImage(prevIndex);
             };
 
