@@ -72,10 +72,10 @@
 <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
 
     <!-- Header -->
-    <header class="w-full p-4">
-        <nav class="grid grid-cols-3 md:flex md:justify-between items-center text-sm text-gray-600 dark:text-gray-300 max-w-7xl mx-auto">
+    <header class="w-full p-4 relative">
+        <nav class="flex justify-between items-center text-sm text-gray-600 dark:text-gray-300 max-w-7xl mx-auto">
             <!-- Left Side -->
-            <div class="flex items-center space-x-4 justify-start">
+            <div class="flex items-center space-x-4">
                 <!-- Mobile Links -->
                 <div class="md:hidden flex items-center space-x-4">
                     <a href="index.html" class="hover:underline">Home</a>
@@ -88,10 +88,10 @@
                     <a href="contact.html" class="hover:underline">Contact</a>
                 </div>
             </div>
-
-            <!-- Center: Waffle Icon (Mobile) -->
-            <div class="flex justify-center md:hidden">
-                <button title="Google apps" class="waffle-toggle p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            
+            <!-- Center (Mobile only) -->
+            <div class="absolute left-1/2 -translate-x-1/2 md:hidden">
+                 <button title="Google apps" class="waffle-toggle p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <svg class="w-6 h-6 text-gray-500 dark:text-white" focusable="false" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
                     </svg>
@@ -99,26 +99,25 @@
             </div>
 
             <!-- Right Side -->
-            <div class="flex items-center space-x-4 justify-end">
+            <div class="flex items-center space-x-4">
                 <!-- Desktop Links (Right) -->
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="library.html" class="hover:underline">Library</a>
                     <a href="startups.html" class="hover:underline">Startups</a>
-                    <!-- Waffle Icon (Desktop) -->
                     <button title="Google apps" class="waffle-toggle p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <svg class="w-6 h-6 text-gray-500 dark:text-white" focusable="false" viewBox="0 0 24 24">
                              <path fill="currentColor" d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
                         </svg>
                     </button>
                 </div>
-                <!-- Profile Icon -->
+                 <!-- Profile Icon -->
                 <a href="#" title="Google Account">
                    <img class="w-10 h-10 rounded-full" src="https://placehold.co/40x40/7F1D1D/FFFFFF?text=R" alt="User profile picture">
                 </a>
             </div>
         </nav>
         <!-- Waffle Menu (Single element, positioned by JS) -->
-        <div id="waffle-menu" class="hidden absolute mt-2 w-72 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg p-4 z-10">
+        <div id="waffle-menu" class="hidden absolute top-full mt-2 w-72 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg p-4 z-10">
             <div class="grid grid-cols-3 gap-2 text-center text-sm">
                  <a href="about.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/4285F4/FFFFFF?text=A" class="w-10 h-10 rounded-full mb-1" alt="About"><span>About</span></a>
                 <a href="blog.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/34A853/FFFFFF?text=B" class="w-10 h-10 rounded-full mb-1" alt="Blog"><span>Blog</span></a>
@@ -299,7 +298,7 @@
             const postModal = document.getElementById('post-modal');
             const modalContentBody = document.getElementById('modal-content-body');
             const closeModalButton = document.getElementById('close-modal-button');
-            const waffleButton = document.getElementById('waffle-button');
+            const waffleToggles = document.querySelectorAll('.waffle-toggle');
             const waffleMenu = document.getElementById('waffle-menu');
             const darkThemeToggle = document.getElementById('dark-theme-toggle');
             const htmlElement = document.documentElement;
@@ -415,18 +414,40 @@
             });
 
             // --- WAFFLE MENU LOGIC ---
-            if (waffleButton && waffleMenu) {
-                waffleButton.addEventListener('click', (e) => {
+            waffleToggles.forEach(button => {
+                button.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    waffleMenu.classList.toggle('hidden');
+                    const menu = document.getElementById('waffle-menu');
+                    const buttonRect = e.currentTarget.getBoundingClientRect();
+                    
+                    menu.style.top = `${buttonRect.bottom + window.scrollY}px`;
+                    
+                    if (window.innerWidth < 768) { // md breakpoint
+                         const menuWidth = menu.offsetWidth || 288; // Use 288 as a fallback
+                         menu.style.left = `${buttonRect.left + (buttonRect.width / 2) - (menuWidth / 2)}px`;
+                         menu.style.right = 'auto';
+                    } else {
+                        menu.style.right = `${window.innerWidth - buttonRect.right}px`;
+                        menu.style.left = 'auto';
+                    }
+                    
+                    menu.classList.toggle('hidden');
                 });
+            });
 
-                window.addEventListener('click', (e) => {
-                    if (!waffleMenu.classList.contains('hidden') && !waffleMenu.contains(e.target) && !waffleButton.contains(e.target)) {
-                        waffleMenu.classList.add('hidden');
+            window.addEventListener('click', (e) => {
+                const menu = document.getElementById('waffle-menu');
+                let isWaffleClick = false;
+                waffleToggles.forEach(button => {
+                    if (button.contains(e.target)) {
+                        isWaffleClick = true;
                     }
                 });
-            }
+
+                if (menu && !menu.classList.contains('hidden') && !menu.contains(e.target) && !isWaffleClick) {
+                    menu.classList.add('hidden');
+                }
+            });
 
             // --- INITIAL EVENT LISTENERS ---
             searchForm.addEventListener('submit', handleSearch);
