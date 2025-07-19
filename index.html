@@ -71,42 +71,8 @@
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
 
-    <!-- Header -->
-    <header class="w-full p-4">
-        <nav class="flex justify-between text-sm text-gray-600 dark:text-gray-300 max-w-7xl mx-auto">
-            <!-- Left-side navigation links -->
-            <div class="flex items-center space-x-4">
-                <a href="about.html" class="hover:underline">About</a>
-                <a href="blog.html" class="hover:underline">Blog</a>
-                <a href="contact.html" class="hover:underline">Contact</a>
-            </div>
-            <!-- Right-side navigation links and icons -->
-            <div class="flex items-center space-x-4">
-                <a href="library.html" class="hover:underline">Library</a>
-                <a href="startups.html" class="hover:underline">Startups</a>
-                <!-- Waffle Launcher -->
-                <div class="relative" id="waffle-container">
-                    <button id="waffle-button" title="Google apps" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <svg class="w-6 h-6 text-gray-500 dark:text-white" focusable="false" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
-                        </svg>
-                    </button>
-                    <div id="waffle-menu" class="hidden absolute top-full right-0 mt-2 w-72 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg p-4 z-10">
-                        <div class="grid grid-cols-3 gap-2 text-center text-sm">
-                             <a href="about.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/4285F4/FFFFFF?text=A" class="w-10 h-10 rounded-full mb-1" alt="About"><span>About</span></a>
-                            <a href="blog.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/34A853/FFFFFF?text=B" class="w-10 h-10 rounded-full mb-1" alt="Blog"><span>Blog</span></a>
-                            <a href="contact.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/EA4335/FFFFFF?text=C" class="w-10 h-10 rounded-full mb-1" alt="Contact"><span>Contact</span></a>
-                            <a href="library.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/FBBC05/FFFFFF?text=L" class="w-10 h-10 rounded-full mb-1" alt="Library"><span>Library</span></a>
-                             <a href="startups.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/7c3aed/FFFFFF?text=S" class="w-10 h-10 rounded-full mb-1" alt="Startups"><span>Startups</span></a>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" title="Google Account">
-                   <img class="w-8 h-8 rounded-full" src="https://placehold.co/32x32/7F1D1D/FFFFFF?text=R" alt="User profile picture">
-                </a>
-            </div>
-        </nav>
-    </header>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
 
     <div id="main-page" class="main-content flex flex-col items-center justify-center px-4">
         <!-- Rohan's Blog Logo -->
@@ -127,14 +93,16 @@
                 <button type="button" id="lucky-button" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 font-medium py-2 px-4 rounded-md" title="This takes you to a random article from Rohan's Blog">I'm Feeling Lucky</button>
             </div>
         </form>
-        <div class="text-sm text-gray-600 dark:text-gray-400">
-            Translate to:
-            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Hindi</a>,
-            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Spanish</a>,
-            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Mandarin Chinese</a>,
-            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Bengali</a>,
-            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Russian</a>,
-            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Japanese</a>
+        <div class="text-sm text-center">
+            <p class="text-gray-600 dark:text-gray-400 mb-2">Translate to:</p>
+            <div class="flex flex-wrap justify-center gap-x-4">
+                <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">हिन्दी</a>
+                <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Español</a>
+                <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">中文</a>
+                <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">বাংলা</a>
+                <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Русский</a>
+                <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">日本語</a>
+            </div>
         </div>
     </div>
 
@@ -156,30 +124,11 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="w-full bg-gray-100 dark:bg-gray-900 text-sm text-gray-600 dark:text-gray-400 mt-auto">
-        <!-- Location Banner -->
-        <div class="px-8 py-3 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
-            <span>New Delhi, India</span>
-            <span class="text-gray-500 dark:text-gray-400">© Rohan Rai Gupta. All Rights Reserved.</span>
-        </div>
-        <!-- Footer Links -->
-        <div class="w-full px-8 py-4">
-            <nav class="flex flex-col sm:flex-row justify-between items-center">
-                <div class="flex items-center space-x-6 mb-2 sm:mb-0">
-                    <a href="https://www.linkedin.com/in/rohanraigupta/" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
-                    <a href="https://twitter.com/rohanraigupta" target="_blank" rel="noopener noreferrer" class="hover:underline">Twitter/X</a>
-                    <a href="https://calendly.com/rohanraigupta/30m" target="_blank" rel="noopener noreferrer" class="hover:underline">Consult</a>
-                </div>
-                <div class="flex items-center space-x-6">
-                    <button id="dark-theme-toggle" class="hover:underline">Dark Theme: Off</button>
-                    <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
-                </div>
-            </nav>
-        </div>
-    </footer>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 
     <script>
+        // Page-specific script for index.html
         document.addEventListener("DOMContentLoaded", function() {
             // --- BLOG POST DATABASE ---
             const posts = [
@@ -266,10 +215,6 @@
             const postModal = document.getElementById('post-modal');
             const modalContentBody = document.getElementById('modal-content-body');
             const closeModalButton = document.getElementById('close-modal-button');
-            const waffleButton = document.getElementById('waffle-button');
-            const waffleMenu = document.getElementById('waffle-menu');
-            const darkThemeToggle = document.getElementById('dark-theme-toggle');
-            const htmlElement = document.documentElement;
             
             let currentPostId = null;
 
@@ -363,38 +308,6 @@
                 displayResults(filteredPosts);
             }
             
-            // --- THEME TOGGLE LOGIC ---
-            function updateThemeToggleText() {
-                const isDarkMode = htmlElement.classList.contains('dark');
-                if (darkThemeToggle) {
-                   darkThemeToggle.textContent = `Dark Theme: ${isDarkMode ? 'On' : 'Off'}`;
-                }
-            }
-
-            darkThemeToggle.addEventListener('click', () => {
-                htmlElement.classList.toggle('dark');
-                if (htmlElement.classList.contains('dark')) {
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                }
-                updateThemeToggleText();
-            });
-
-            // --- WAFFLE MENU LOGIC ---
-            if (waffleButton && waffleMenu) {
-                waffleButton.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    waffleMenu.classList.toggle('hidden');
-                });
-
-                window.addEventListener('click', (e) => {
-                    if (!waffleMenu.classList.contains('hidden') && !waffleMenu.contains(e.target) && !waffleButton.contains(e.target)) {
-                        waffleMenu.classList.add('hidden');
-                    }
-                });
-            }
-
             // --- INITIAL EVENT LISTENERS ---
             searchForm.addEventListener('submit', handleSearch);
 
@@ -408,9 +321,8 @@
             closeModalButton.addEventListener('click', closeModal);
             postModal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
 
-            // --- INITIALIZE PAGE STATE ---
-            updateThemeToggleText(); // Set initial theme toggle text
         });
     </script>
+    <script src="main.js"></script>
 </body>
 </html>
