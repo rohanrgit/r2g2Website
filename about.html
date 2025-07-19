@@ -23,6 +23,9 @@
         .modal {
             transition: opacity 0.25s ease;
         }
+        .image-gallery-container {
+            max-height: 400px;
+        }
     </style>
     <script>
         // This script checks for a saved theme preference and applies it.
@@ -47,7 +50,7 @@
             <!-- Left Column: Image Gallery, Wikipedia, People Also Ask -->
             <div class="lg:col-span-2">
                 <!-- Image Gallery -->
-                <div class="grid grid-cols-3 grid-rows-2 gap-2 mb-8" style="max-height: 400px;">
+                <div class="grid grid-cols-3 grid-rows-2 gap-2 mb-8 image-gallery-container">
                     <div class="col-span-2 row-span-2">
                         <img src="" alt="Rohan Rai Gupta - Main" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/800x800/cccccc/ffffff?text=Rohan';">
                     </div>
