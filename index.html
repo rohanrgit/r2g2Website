@@ -73,39 +73,52 @@
 
     <!-- Header -->
     <header class="w-full p-4">
-        <nav class="flex justify-between text-sm text-gray-600 dark:text-gray-300 max-w-7xl mx-auto">
-            <!-- Left-side navigation links -->
+        <nav class="flex justify-between items-center text-sm text-gray-600 dark:text-gray-300 max-w-7xl mx-auto">
+            <!-- Left Side -->
             <div class="flex items-center space-x-4">
-                <a href="about.html" class="hover:underline">About</a>
-                <a href="blog.html" class="hover:underline">Blog</a>
-                <a href="contact.html" class="hover:underline">Contact</a>
+                <!-- Waffle Icon (Mobile) -->
+                <button class="waffle-toggle md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <svg class="w-6 h-6 text-gray-500 dark:text-white" focusable="false" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
+                    </svg>
+                </button>
+                <!-- Desktop Links (Left) -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="about.html" class="hover:underline">About</a>
+                    <a href="blog.html" class="hover:underline">Blog</a>
+                    <a href="contact.html" class="hover:underline">Contact</a>
+                </div>
             </div>
-            <!-- Right-side navigation links and icons -->
+
+            <!-- Right Side -->
             <div class="flex items-center space-x-4">
-                <a href="library.html" class="hover:underline">Library</a>
-                <a href="startups.html" class="hover:underline">Startups</a>
-                <!-- Waffle Launcher -->
-                <div class="relative" id="waffle-container">
-                    <button id="waffle-button" title="Google apps" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <!-- Desktop Links (Right) -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="library.html" class="hover:underline">Library</a>
+                    <a href="startups.html" class="hover:underline">Startups</a>
+                    <!-- Waffle Icon (Desktop) -->
+                    <button class="waffle-toggle p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <svg class="w-6 h-6 text-gray-500 dark:text-white" focusable="false" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
+                             <path fill="currentColor" d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
                         </svg>
                     </button>
-                    <div id="waffle-menu" class="hidden absolute top-full right-0 mt-2 w-72 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg p-4 z-10">
-                        <div class="grid grid-cols-3 gap-2 text-center text-sm">
-                             <a href="about.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/4285F4/FFFFFF?text=A" class="w-10 h-10 rounded-full mb-1" alt="About"><span>About</span></a>
-                            <a href="blog.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/34A853/FFFFFF?text=B" class="w-10 h-10 rounded-full mb-1" alt="Blog"><span>Blog</span></a>
-                            <a href="contact.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/EA4335/FFFFFF?text=C" class="w-10 h-10 rounded-full mb-1" alt="Contact"><span>Contact</span></a>
-                            <a href="library.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/FBBC05/FFFFFF?text=L" class="w-10 h-10 rounded-full mb-1" alt="Library"><span>Library</span></a>
-                             <a href="startups.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/7c3aed/FFFFFF?text=S" class="w-10 h-10 rounded-full mb-1" alt="Startups"><span>Startups</span></a>
-                        </div>
-                    </div>
                 </div>
+                <!-- Profile Icon -->
                 <a href="#" title="Google Account">
-                   <img class="w-8 h-8 rounded-full" src="https://placehold.co/32x32/7F1D1D/FFFFFF?text=R" alt="User profile picture">
+                   <img class="w-10 h-10 rounded-full" src="https://placehold.co/40x40/7F1D1D/FFFFFF?text=R" alt="User profile picture">
                 </a>
             </div>
         </nav>
+        <!-- Waffle Menu (Single element, positioned by JS) -->
+        <div id="waffle-menu" class="hidden absolute top-full mt-2 w-72 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg p-4 z-10">
+            <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                 <a href="about.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/4285F4/FFFFFF?text=A" class="w-10 h-10 rounded-full mb-1" alt="About"><span>About</span></a>
+                <a href="blog.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/34A853/FFFFFF?text=B" class="w-10 h-10 rounded-full mb-1" alt="Blog"><span>Blog</span></a>
+                <a href="contact.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/EA4335/FFFFFF?text=C" class="w-10 h-10 rounded-full mb-1" alt="Contact"><span>Contact</span></a>
+                <a href="library.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/FBBC05/FFFFFF?text=L" class="w-10 h-10 rounded-full mb-1" alt="Library"><span>Library</span></a>
+                 <a href="startups.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/7c3aed/FFFFFF?text=S" class="w-10 h-10 rounded-full mb-1" alt="Startups"><span>Startups</span></a>
+            </div>
+        </div>
     </header>
 
     <div id="main-page" class="main-content flex flex-col items-center justify-center px-4">
@@ -266,7 +279,7 @@
             const postModal = document.getElementById('post-modal');
             const modalContentBody = document.getElementById('modal-content-body');
             const closeModalButton = document.getElementById('close-modal-button');
-            const waffleButton = document.getElementById('waffle-button');
+            const waffleToggles = document.querySelectorAll('.waffle-toggle');
             const waffleMenu = document.getElementById('waffle-menu');
             const darkThemeToggle = document.getElementById('dark-theme-toggle');
             const htmlElement = document.documentElement;
@@ -382,18 +395,37 @@
             });
 
             // --- WAFFLE MENU LOGIC ---
-            if (waffleButton && waffleMenu) {
-                waffleButton.addEventListener('click', (e) => {
+            waffleToggles.forEach(button => {
+                button.addEventListener('click', (e) => {
                     e.stopPropagation();
+                    const rect = button.getBoundingClientRect();
+                    waffleMenu.style.top = `${rect.bottom}px`;
+                    
+                    // Position menu on left for mobile, right for desktop
+                    if (window.innerWidth < 768) { // md breakpoint
+                        waffleMenu.style.left = `${rect.left}px`;
+                        waffleMenu.style.right = 'auto';
+                    } else {
+                        waffleMenu.style.right = `${window.innerWidth - rect.right}px`;
+                        waffleMenu.style.left = 'auto';
+                    }
+                    
                     waffleMenu.classList.toggle('hidden');
                 });
+            });
 
-                window.addEventListener('click', (e) => {
-                    if (!waffleMenu.classList.contains('hidden') && !waffleMenu.contains(e.target) && !waffleButton.contains(e.target)) {
-                        waffleMenu.classList.add('hidden');
+            window.addEventListener('click', (e) => {
+                let isWaffleClick = false;
+                waffleToggles.forEach(button => {
+                    if(button.contains(e.target)) {
+                        isWaffleClick = true;
                     }
                 });
-            }
+
+                if (!waffleMenu.classList.contains('hidden') && !waffleMenu.contains(e.target) && !isWaffleClick) {
+                    waffleMenu.classList.add('hidden');
+                }
+            });
 
             // --- INITIAL EVENT LISTENERS ---
             searchForm.addEventListener('submit', handleSearch);
