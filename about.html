@@ -24,7 +24,7 @@
             transition: opacity 0.25s ease;
         }
         .image-gallery-container {
-            max-height: 400px;
+            height: 400px;
         }
     </style>
     <script>
@@ -47,21 +47,67 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Left Column: Image Gallery, Wikipedia, People Also Ask -->
+            <!-- Left Column Top -->
             <div class="lg:col-span-2">
-                <!-- Image Gallery -->
-                <div class="grid grid-cols-3 grid-rows-2 gap-2 mb-8 image-gallery-container">
-                    <div class="col-span-2 row-span-2">
-                        <img src="assets/about1.jpg" alt="Rohan Rai Gupta - Main" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/800x800/cccccc/ffffff?text=Rohan';">
+                <!-- Image Gallery & Blog Post Card -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 image-gallery-container">
+                    <div class="md:col-span-2 grid grid-cols-3 grid-rows-2 gap-2 h-full">
+                        <div class="col-span-2 row-span-2">
+                            <img src="assets/about1.jpg" alt="Rohan Rai Gupta - Main" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/800x800/cccccc/ffffff?text=Rohan';">
+                        </div>
+                        <div class="col-span-1 row-span-1">
+                            <img src="assets/about2.jpg" alt="Rohan Rai Gupta - Thumbnail 1" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/400x400/b3b3b3/ffffff?text=Rohan';">
+                        </div>
+                        <div class="col-span-1 row-span-1">
+                            <img src="assets/about3.heic" alt="Rohan Rai Gupta - Thumbnail 2" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/400x400/999999/ffffff?text=Rohan';">
+                        </div>
                     </div>
-                    <div class="col-span-1 row-span-1">
-                        <img src="assets/about2.jpg" alt="Rohan Rai Gupta - Thumbnail 1" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/400x400/b3b3b3/ffffff?text=Rohan';">
+                    <div class="md:col-span-1 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-4 flex flex-col h-full">
+                        <div class="flex items-center mb-2">
+                             <svg class="w-6 h-6 mr-2 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0-.825.675-1.5 1.5-1.5h11.04c.825 0 1.5.675 1.5 1.5v17c0 .825-.675 1.5-1.5 1.5H6.48c-.825 0-1.5-.675-1.5-1.5v-17zM6.48 20.5h11.04V3.5H6.48v17zM8.49 6h7.02v1.5H8.49V6zm0 3h7.02v1.5H8.49V9zm0 3h4.01v1.5H8.49v-1.5z"></path></svg>
+                            <p class="font-semibold">Rohan's Blog</p>
+                        </div>
+                        <a href="#" class="text-lg font-semibold text-blue-800 dark:text-blue-400 hover:underline">A Deep Dive into Modern CSS</a>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Full post: /blog/a-deep-dive-into-css</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-auto pt-4">18 Jul 2025</p>
                     </div>
-                    <div class="col-span-1 row-span-1">
-                        <img src="assets/about3.heic" alt="Rohan Rai Gupta - Thumbnail 2" class="gallery-img rounded-lg object-cover w-full h-full cursor-pointer" onerror="this.onerror=null; this.src='https://placehold.co/400x400/999999/ffffff?text=Rohan';">
+                </div>
+            </div>
+
+            <!-- Right Column Top -->
+            <div class="lg:col-span-1">
+                 <!-- Top Cards -->
+                <div class="flex gap-4 mb-6">
+                    <div class="w-1/2 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 text-center">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Age</p>
+                        <p class="text-2xl font-bold">35</p>
+                        <p class="text-xs text-gray-400 mt-1">1 Jan 1990</p>
+                    </div>
+                    <div class="w-1/2 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-6 text-center">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Net worth</p>
+                        <p class="text-2xl font-bold">Placeholder</p>
+                        <p class="text-xs text-gray-400 mt-1">Forbes</p>
                     </div>
                 </div>
 
+                <!-- LinkedIn Post Card -->
+                <div class="bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-6">
+                    <div class="flex items-center mb-2">
+                        <svg class="w-5 h-5 mr-2 text-blue-700 dark:text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                        </svg>
+                        <p class="font-semibold">LinkedIn</p>
+                    </div>
+                    <a href="https://www.linkedin.com/posts/example_post_activity-12345" target="_blank" rel="noopener noreferrer" class="text-sm hover:underline">
+                        <span class="font-bold">Rohan Rai Gupta (@rohanraigupta)</span> • Founder of several startups. I'm a computer scientist. I'm 35 years old!...
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column Bottom -->
+            <div class="lg:col-span-2">
                 <!-- Wikipedia Snippet -->
                 <div class="mb-8">
                     <div class="flex items-center mb-2">
@@ -105,23 +151,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Right Column: Knowledge Panel -->
+            <!-- Right Column Bottom -->
             <div class="lg:col-span-1">
-                <!-- Top Cards -->
-                <div class="flex gap-4 mb-6">
-                    <div class="w-1/2 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Age</p>
-                        <p class="text-xl font-bold">35</p>
-                        <p class="text-xs text-gray-400">1 Jan 1990</p>
-                    </div>
-                    <div class="w-1/2 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Net worth</p>
-                        <p class="text-xl font-bold">Placeholder</p>
-                        <p class="text-xs text-gray-400">Forbes</p>
-                    </div>
-                </div>
-
                 <!-- About Panel -->
                 <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
                     <h3 class="text-xl font-semibold mb-4">About</h3>
@@ -138,7 +169,7 @@
                     <div class="mt-6 border-t dark:border-gray-700 pt-4">
                         <h4 class="font-semibold mb-2">Profiles</h4>
                         <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/rohanraigupta/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 flex items-center hover:underline">
+                             <a href="https://www.linkedin.com/in/rohanraigupta/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 flex items-center hover:underline">
                                 <svg class="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
                                 </svg>
@@ -187,8 +218,6 @@
                 'assets/about16.jpg', 'assets/about17.jpg', 'assets/about18.jpg',
                 'assets/about19.jpg', 'assets/about20.jpg'
             ];
-
-            const galleryImgElements = document.querySelectorAll('.gallery-img');
             
             // --- Modal Logic ---
             const imageModal = document.getElementById('image-modal');
@@ -196,6 +225,7 @@
             const closeModal = document.getElementById('close-modal');
             const prevBtn = document.getElementById('prev-btn');
             const nextBtn = document.getElementById('next-btn');
+            const galleryImgElements = document.querySelectorAll('.gallery-img');
             let currentImageIndex = 0;
 
             const showImage = (index) => {
