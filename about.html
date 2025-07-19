@@ -179,27 +179,20 @@
         document.addEventListener('DOMContentLoaded', () => {
             // --- Image Randomization Logic ---
             const allImagePaths = [
-                'assets/about1.jpg',
-                'assets/about2.jpg',
-                'assets/about3.heic',
-                'assets/about4.jpg',
-                'assets/about5.jpg',
-                'assets/about6.jpg',
-                'assets/about7.jpg',
-                'assets/about8.jpg',
-                'assets/about9.jpg',
-                'assets/about10.jpg',
-                'assets/about11.jpg',
-                'assets/about12.jpg',
-                'assets/about13.jpg',
-                'assets/about14.jpg',
-                'assets/about15.jpg',
-                'assets/about16.jpg',
-                'assets/about17.jpg',
-                'assets/about18.jpg',
-                'assets/about19.jpg',
-                'assets/about20.jpg'
+                'assets/about1.jpg', 'assets/about2.jpg', 'assets/about3.heic',
+                'assets/about4.jpg', 'assets/about5.jpg', 'assets/about6.jpg',
+                'assets/about7.jpg', 'assets/about8.jpg', 'assets/about9.jpg',
+                'assets/about10.jpg', 'assets/about11.jpg', 'assets/about12.jpg',
+                'assets/about13.jpg', 'assets/about14.jpg', 'assets/about15.jpg',
+                'assets/about16.jpg', 'assets/about17.jpg', 'assets/about18.jpg',
+                'assets/about19.jpg', 'assets/about20.jpg'
             ];
+
+            // To fix the "images not loading" issue, we'll use placeholders.
+            // When you are ready to use your own images, replace this array
+            // with the `allImagePaths` array above and ensure your file paths are correct.
+            const placeholderImagePaths = Array.from({ length: 20 }, (_, i) => `https://placehold.co/800x600/cccccc/ffffff?text=Image+${i + 1}`);
+
 
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {
@@ -208,13 +201,13 @@
                 }
             }
 
-            shuffleArray(allImagePaths);
+            shuffleArray(placeholderImagePaths); // Using placeholders for demonstration
 
             const galleryImgElements = document.querySelectorAll('.gallery-img');
             const displayedImages = [];
             galleryImgElements.forEach((img, index) => {
                 if (index < 3) {
-                    const src = allImagePaths[index];
+                    const src = placeholderImagePaths[index]; // Using placeholders
                     img.src = src;
                     displayedImages.push(src);
                 }
