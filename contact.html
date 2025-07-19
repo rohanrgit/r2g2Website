@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Rohan Rai Gupta's Blog</title>
+    <meta name="description" content="Get in touch with Rohan Rai Gupta through the contact form.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind CSS to use the 'class' strategy for dark mode
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f9;
+        }
+        .dark body {
+            background-color: #121212;
+        }
+        .form-container {
+            max-width: 700px;
+            margin: 2rem auto;
+        }
+        .form-card {
+            background-color: white;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .dark .form-card {
+            background-color: #202124;
+            border-color: #5f6368;
+        }
+        .form-header {
+            border-top: 10px solid #673ab7;
+        }
+        .required-asterisk::after {
+            content: ' *';
+            color: #d93025;
+        }
+    </style>
+    <script>
+        // This script checks for a saved theme preference and applies it.
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+
+    <!-- Common Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <div class="form-container">
+        <!-- Form Header -->
+        <div class="form-card form-header">
+            <div class="p-6">
+                <h1 class="text-3xl mb-2">Contact Me</h1>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Please fill out the form below to get in touch. Fields marked with an asterisk are required.</p>
+            </div>
+        </div>
+
+        <!-- Name Card -->
+        <div class="form-card">
+            <div class="p-6">
+                <label for="name" class="text-sm font-medium required-asterisk">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your answer" class="mt-4 block w-full bg-transparent border-b border-gray-300 dark:border-gray-600 focus:border-purple-500 focus:outline-none pb-2 text-sm" required>
+            </div>
+        </div>
+
+        <!-- Contact Number Card -->
+        <div class="form-card">
+            <div class="p-6">
+                <label for="contact-number" class="text-sm font-medium">Contact Number</label>
+                <input type="tel" id="contact-number" name="contact-number" placeholder="Your answer" class="mt-4 block w-full bg-transparent border-b border-gray-300 dark:border-gray-600 focus:border-purple-500 focus:outline-none pb-2 text-sm">
+            </div>
+        </div>
+        
+        <!-- Email Card -->
+        <div class="form-card">
+            <div class="p-6">
+                <label for="email" class="text-sm font-medium required-asterisk">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" class="mt-4 block w-full bg-transparent border-b border-gray-300 dark:border-gray-600 focus:border-purple-500 focus:outline-none pb-2 text-sm" required>
+            </div>
+        </div>
+
+        <!-- Reason for Contact Card -->
+        <div class="form-card">
+            <div class="p-6">
+                <p class="text-sm font-medium mb-4 required-asterisk">Reason for Contact</p>
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <input type="radio" id="general" name="reason" value="general" class="h-4 w-4 text-purple-600 border-gray-300 focus:ring-purple-500">
+                        <label for="general" class="ml-3 block text-sm">General Inquiry</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="collaboration" name="reason" value="collaboration" class="h-4 w-4 text-purple-600 border-gray-300 focus:ring-purple-500">
+                        <label for="collaboration" class="ml-3 block text-sm">Collaboration / Partnership</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="feedback" name="reason" value="feedback" class="h-4 w-4 text-purple-600 border-gray-300 focus:ring-purple-500">
+                        <label for="feedback" class="ml-3 block text-sm">Feedback or Suggestions</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="other" name="reason" value="other" class="h-4 w-4 text-purple-600 border-gray-300 focus:ring-purple-500">
+                        <label for="other" class="ml-3 block text-sm">Other</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Message Card -->
+        <div class="form-card">
+            <div class="p-6">
+                <label for="message" class="text-sm font-medium">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Your answer" class="mt-4 block w-full bg-transparent border-b border-gray-300 dark:border-gray-600 focus:border-purple-500 focus:outline-none pb-2 text-sm"></textarea>
+            </div>
+        </div>
+
+        <!-- Form Submission -->
+        <div class="flex items-center justify-between mt-6">
+            <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-md">Submit</button>
+            <a href="#" class="text-purple-600 dark:text-purple-400 hover:underline text-sm">Clear form</a>
+        </div>
+        
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">Never submit passwords through this form.</p>
+    </div>
+
+    <!-- Common Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
