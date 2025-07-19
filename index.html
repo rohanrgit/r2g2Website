@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Rai Gupta's Blog</title>
+    <meta name="description" content="The personal blog of Rohan Rai Gupta, featuring articles on technology, lifestyle, and more. Search for posts or discover something new.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind CSS to use the 'class' strategy for dark mode
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content {
+            flex-grow: 1;
+        }
+        .search-result-link {
+            color: #1a0dab;
+        }
+        .dark .search-result-link {
+            color: #8ab4f8;
+        }
+        .search-result-link:hover {
+            text-decoration: underline;
+        }
+        .search-result-url {
+            color: #006621;
+        }
+        .dark .search-result-url {
+            color: #90d19f;
+        }
+        .search-result-snippet {
+            color: #545454;
+        }
+        .dark .search-result-snippet {
+            color: #bdc1c6;
+        }
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 40;
+        }
+        .modal-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 50;
+            max-height: 80vh;
+        }
+    </style>
+    <script>
+        // This script checks for a saved theme preference and applies it immediately.
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+
+    <!-- Header -->
+    <header class="w-full p-4">
+        <nav class="flex justify-between text-sm text-gray-600 dark:text-gray-300 max-w-7xl mx-auto">
+            <!-- Left-side navigation links -->
+            <div class="flex items-center space-x-4">
+                <a href="about.html" class="hover:underline">About</a>
+                <a href="blog.html" class="hover:underline">Blog</a>
+                <a href="contact.html" class="hover:underline">Contact</a>
+            </div>
+            <!-- Right-side navigation links and icons -->
+            <div class="flex items-center space-x-4">
+                <a href="library.html" class="hover:underline">Library</a>
+                <a href="startups.html" class="hover:underline">Startups</a>
+                <!-- Waffle Launcher -->
+                <div class="relative" id="waffle-container">
+                    <button id="waffle-button" title="Google apps" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <svg class="w-6 h-6 text-gray-500 dark:text-white" focusable="false" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
+                        </svg>
+                    </button>
+                    <div id="waffle-menu" class="hidden absolute top-full right-0 mt-2 w-72 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg p-4 z-10">
+                        <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                             <a href="about.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/4285F4/FFFFFF?text=A" class="w-10 h-10 rounded-full mb-1" alt="About"><span>About</span></a>
+                            <a href="blog.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/34A853/FFFFFF?text=B" class="w-10 h-10 rounded-full mb-1" alt="Blog"><span>Blog</span></a>
+                            <a href="contact.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/EA4335/FFFFFF?text=C" class="w-10 h-10 rounded-full mb-1" alt="Contact"><span>Contact</span></a>
+                            <a href="library.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/FBBC05/FFFFFF?text=L" class="w-10 h-10 rounded-full mb-1" alt="Library"><span>Library</span></a>
+                             <a href="startups.html" class="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600"><img src="https://placehold.co/40x40/7c3aed/FFFFFF?text=S" class="w-10 h-10 rounded-full mb-1" alt="Startups"><span>Startups</span></a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" title="Google Account">
+                   <img class="w-8 h-8 rounded-full" src="https://placehold.co/32x32/7F1D1D/FFFFFF?text=R" alt="User profile picture">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="main-page" class="main-content flex flex-col items-center justify-center px-4">
+        <!-- Rohan's Blog Logo -->
+        <div class="mb-8">
+            <img src="https://placehold.co/288x96/cccccc/333333?text=Rohan's+Blog" alt="Rohan's Blog Logo" class="w-72 h-auto">
+        </div>
+
+        <!-- Search Form -->
+        <form id="search-form" class="w-full max-w-xl mb-6">
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                </div>
+                <input id="search-input" type="text" class="block w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Search Rohan's blog...">
+            </div>
+            <div class="flex items-center justify-center mt-6 space-x-4">
+                <button type="submit" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 font-medium py-2 px-4 rounded-md" title="Search Blog">Search</button>
+                <button type="button" id="lucky-button" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 font-medium py-2 px-4 rounded-md" title="This takes you to a random article from Rohan's Blog">I'm Feeling Lucky</button>
+            </div>
+        </form>
+        <div class="text-sm text-gray-600 dark:text-gray-400">
+            Translate to:
+            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Hindi</a>,
+            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Spanish</a>,
+            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Mandarin Chinese</a>,
+            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Bengali</a>,
+            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Russian</a>,
+            <a href="#" class="text-blue-800 dark:text-blue-400 hover:underline">Japanese</a>
+        </div>
+    </div>
+
+    <!-- Search Results / Blog Post List -->
+    <div id="results-page" class="hidden main-content w-full max-w-4xl mx-auto p-4 sm:p-6">
+        <!-- This section will be populated with search results -->
+    </div>
+
+    <!-- Blog Post Modal -->
+    <div id="post-modal" class="hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content bg-white dark:bg-gray-800 rounded-lg shadow-2xl w-11/12 md:max-w-2xl lg:max-w-4xl p-6 md:p-8 overflow-y-auto">
+            <div id="modal-content-body">
+                <!-- Post content will be injected here -->
+            </div>
+            <div class="flex justify-end items-center mt-6">
+                <button id="close-modal-button" class="bg-gray-500 hover:bg-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-lg">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full bg-gray-100 dark:bg-gray-900 text-sm text-gray-600 dark:text-gray-400 mt-auto">
+        <!-- Location Banner -->
+        <div class="px-8 py-3 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
+            <span>New Delhi, India</span>
+            <span class="text-gray-500 dark:text-gray-400">© Rohan Rai Gupta. All Rights Reserved.</span>
+        </div>
+        <!-- Footer Links -->
+        <div class="w-full px-8 py-4">
+            <nav class="flex flex-col sm:flex-row justify-between items-center">
+                <div class="flex items-center space-x-6 mb-2 sm:mb-0">
+                    <a href="https://www.linkedin.com/in/rohanraigupta/" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
+                    <a href="https://twitter.com/rohanraigupta" target="_blank" rel="noopener noreferrer" class="hover:underline">Twitter/X</a>
+                    <a href="https://calendly.com/rohanraigupta/30m" target="_blank" rel="noopener noreferrer" class="hover:underline">Consult</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <button id="dark-theme-toggle" class="hover:underline">Dark Theme: Off</button>
+                    <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+                </div>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- BLOG POST DATABASE ---
+            const posts = [
+                {
+                    id: 'welcome-to-the-blog',
+                    title: 'Welcome to My Google-Style Blog!',
+                    date: '2025-07-01',
+                    author: 'Admin',
+                    tags: ['welcome', 'intro', 'google', 'blog'],
+                    snippet: 'This is the very first post on this unique, Google-themed blog. Discover how it works and what to expect.',
+                    content: `
+                        <h1 class="text-3xl font-bold mb-4">Welcome to My Google-Style Blog!</h1>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Published on July 1, 2025 by Admin</p>
+                        <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
+                            <p>If you're reading this, you've successfully loaded my new blog. I wanted a clean, familiar interface, and what's more familiar than the Google search page?</p>
+                            <p class="mt-4">This entire website is a single HTML file. The "search" functionality is powered by JavaScript to filter through a predefined list of blog posts—the very one you're reading now.</p>
+                            <h2 class="text-2xl font-semibold mt-6 mb-3">How It Works</h2>
+                            <p>You can use the search bar on the main page to look for posts by title or by tags. For example, try searching for "welcome" or "tech".</p>
+                            <p class="mt-4">Clicking the "I'm Feeling Lucky" button will take you directly to the most recent post. It's a fun way to discover new content without searching.</p>
+                            <p class="mt-4">All the content is stored directly in a JavaScript array within this HTML file. This makes it incredibly simple to manage and deploy—no database or backend required!</p>
+                        </div>
+                    `
+                },
+                {
+                    id: 'a-deep-dive-into-css',
+                    title: 'A Deep Dive into Modern CSS',
+                    date: '2025-07-02',
+                    author: 'Jane Doe',
+                    tags: ['css', 'web development', 'tech', 'frontend'],
+                    snippet: 'Exploring the powerful features of modern CSS, including Flexbox, Grid, and Custom Properties. Let\'s build better layouts.',
+                    content: `
+                        <h1 class="text-3xl font-bold mb-4">A Deep Dive into Modern CSS</h1>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Published on July 2, 2025 by Jane Doe</p>
+                        <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
+                            <p>CSS has evolved far beyond simple color and font changes. Today, it's a powerful layout and design system. In this post, we'll explore three pillars of modern CSS.</p>
+                            <h2 class="text-2xl font-semibold mt-6 mb-3">1. Flexbox</h2>
+                            <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns. It makes it easy to align items and distribute space. Perfect for navigation bars and component-level layouts.</p>
+                            <h2 class="text-2xl font-semibold mt-6 mb-3">2. CSS Grid</h2>
+                            <p>Grid is a two-dimensional layout system, meaning it can handle both columns and rows simultaneously. It is the most powerful layout system available in CSS and is ideal for creating complex, responsive page layouts.</p>
+                            <h2 class="text-2xl font-semibold mt-6 mb-3">3. Custom Properties (CSS Variables)</h2>
+                            <p>CSS Custom Properties allow you to store values in variables that can be reused throughout your stylesheet. This is a game-changer for theming, consistency, and maintainability.</p>
+                            <pre class="bg-gray-100 dark:bg-gray-700 p-4 rounded-md mt-4"><code class="language-css">:root {
+      --main-bg-color: #f1f5f9;
+      --main-text-color: #1e293b;
+    }
+
+    body {
+      background-color: var(--main-bg-color);
+      color: var(--main-text-color);
+    }</code></pre>
+                        </div>
+                    `
+                },
+                {
+                    id: 'the-art-of-minimalism',
+                    title: 'The Art of Digital Minimalism',
+                    date: '2025-06-20',
+                    author: 'John Smith',
+                    tags: ['lifestyle', 'minimalism', 'digital'],
+                    snippet: 'In a world of constant notifications and digital clutter, how can we find focus? This post explores the principles of digital minimalism.',
+                    content: `
+                        <h1 class="text-3xl font-bold mb-4">The Art of Digital Minimalism</h1>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Published on June 20, 2025 by John Smith</p>
+                        <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300">
+                            <p>Digital minimalism is a philosophy that helps you question how much of your time and attention you're giving to technology. It's not about rejecting technology, but about using it more intentionally.</p>
+                            <h2 class="text-2xl font-semibold mt-6 mb-3">Key Principles</h2>
+                            <ul class="list-disc pl-5 space-y-2">
+                              <li><strong>Clutter is costly:</strong> Every app, notification, and account competes for your attention.</li>
+                              <li><strong>Optimization is important:</strong> Configure your devices to serve you, not the other way around.</li>
+                              <li><strong>Intentionality is satisfying:</strong> Choose to use technology for specific, high-value activities.</li>
+                            </ul>
+                            <p class="mt-4">Start by decluttering your phone's home screen or turning off non-essential notifications. You might be surprised by how much focus you regain.</p>
+                        </div>
+                    `
+                }
+            ];
+
+            // --- DOM ELEMENTS ---
+            const mainPage = document.getElementById('main-page');
+            const resultsPage = document.getElementById('results-page');
+            const searchForm = document.getElementById('search-form');
+            const searchInput = document.getElementById('search-input');
+            const luckyButton = document.getElementById('lucky-button');
+            const postModal = document.getElementById('post-modal');
+            const modalContentBody = document.getElementById('modal-content-body');
+            const closeModalButton = document.getElementById('close-modal-button');
+            const waffleButton = document.getElementById('waffle-button');
+            const waffleMenu = document.getElementById('waffle-menu');
+            const darkThemeToggle = document.getElementById('dark-theme-toggle');
+            const htmlElement = document.documentElement;
+            
+            let currentPostId = null;
+
+            // --- UI FUNCTIONS ---
+            function displayResults(postsToDisplay) {
+                mainPage.classList.add('hidden');
+                resultsPage.innerHTML = ''; // Clear previous results
+
+                const query = searchInput.value || document.getElementById('results-search-input')?.value || "";
+                const escapedQuery = query.replace(/"/g, '&quot;');
+
+                const resultsHeader = `
+                    <div class="flex flex-wrap items-center justify-between border-b dark:border-gray-700 pb-4 mb-6 gap-4">
+                         <a href="#" id="home-logo-link">
+                            <img src="https://placehold.co/96x32/cccccc/333333?text=Blog" alt="Rohan's Blog Logo" class="w-24 h-auto">
+                         </a>
+                        <form id="results-search-form" class="flex-grow max-w-xl">
+                            <input id="results-search-input" type="text" class="block w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full py-3 pl-5 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm" value="${escapedQuery}">
+                        </form>
+                    </div>
+                `;
+                resultsPage.insertAdjacentHTML('beforeend', resultsHeader);
+
+                if (postsToDisplay.length === 0) {
+                    resultsPage.insertAdjacentHTML('beforeend', `<p class="text-center text-gray-600 dark:text-gray-400">No blog posts found matching your search.</p>`);
+                } else {
+                    const resultsList = document.createElement('div');
+                    postsToDisplay.forEach(post => {
+                        const resultEl = document.createElement('div');
+                        resultEl.className = 'mb-8';
+                        resultEl.innerHTML = `
+                            <div>
+                                <span class="search-result-url">/blog/${post.id}</span>
+                                <h3 class="text-xl mt-1"><a href="#" data-post-id="${post.id}" class="search-result-link font-medium">${post.title}</a></h3>
+                            </div>
+                            <p class="search-result-snippet mt-1">${post.snippet}</p>
+                        `;
+                        resultsList.appendChild(resultEl);
+                    });
+                    resultsPage.appendChild(resultsList);
+                }
+                resultsPage.classList.remove('hidden');
+
+                // --- ADD EVENT LISTENERS FOR NEW ELEMENTS ---
+                document.getElementById('home-logo-link').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    resultsPage.classList.add('hidden');
+                    mainPage.classList.remove('hidden');
+                    searchInput.value = '';
+                });
+                document.getElementById('results-search-form').addEventListener('submit', handleSearch);
+                document.querySelectorAll('.search-result-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        openPostModal(e.target.dataset.postId);
+                    });
+                });
+            }
+
+            function openPostModal(postId) {
+                const post = posts.find(p => p.id === postId);
+                if (post) {
+                    currentPostId = postId;
+                    modalContentBody.innerHTML = post.content;
+                    postModal.classList.remove('hidden');
+                }
+            }
+
+            function closeModal() {
+                postModal.classList.add('hidden');
+                modalContentBody.innerHTML = '';
+                currentPostId = null;
+            }
+
+            // --- EVENT HANDLERS ---
+            function handleSearch(event) {
+                event.preventDefault();
+                const currentInput = document.getElementById('results-search-input') || searchInput;
+                const query = currentInput.value.toLowerCase().trim();
+
+                if (query === '') {
+                    const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
+                    displayResults(sortedPosts);
+                    return;
+                }
+
+                const filteredPosts = posts.filter(post =>
+                    post.title.toLowerCase().includes(query) ||
+                    post.tags.some(tag => tag.toLowerCase().includes(query))
+                );
+                displayResults(filteredPosts);
+            }
+            
+            // --- THEME TOGGLE LOGIC ---
+            function updateThemeToggleText() {
+                const isDarkMode = htmlElement.classList.contains('dark');
+                if (darkThemeToggle) {
+                   darkThemeToggle.textContent = `Dark Theme: ${isDarkMode ? 'On' : 'Off'}`;
+                }
+            }
+
+            darkThemeToggle.addEventListener('click', () => {
+                htmlElement.classList.toggle('dark');
+                if (htmlElement.classList.contains('dark')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+                updateThemeToggleText();
+            });
+
+            // --- WAFFLE MENU LOGIC ---
+            if (waffleButton && waffleMenu) {
+                waffleButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    waffleMenu.classList.toggle('hidden');
+                });
+
+                window.addEventListener('click', (e) => {
+                    if (!waffleMenu.classList.contains('hidden') && !waffleMenu.contains(e.target) && !waffleButton.contains(e.target)) {
+                        waffleMenu.classList.add('hidden');
+                    }
+                });
+            }
+
+            // --- INITIAL EVENT LISTENERS ---
+            searchForm.addEventListener('submit', handleSearch);
+
+            luckyButton.addEventListener('click', () => {
+                const latestPost = posts.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+                if (latestPost) {
+                    openPostModal(latestPost.id);
+                }
+            });
+
+            closeModalButton.addEventListener('click', closeModal);
+            postModal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+
+            // --- INITIALIZE PAGE STATE ---
+            updateThemeToggleText(); // Set initial theme toggle text
+        });
+    </script>
+</body>
+</html>
